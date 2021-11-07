@@ -4,6 +4,7 @@ import { ImageList } from './components/ImageList';
 import { SearchBar } from './components/SearchBar';
 function App() {
   const [images,setImages] = useState([]);
+   //ERROR ApiKeyを静的に指定すれば動く
   const ApiKey = process.env.REACT_APP_PIXABAY_APIKEY;
   const onSearchSubmit = async (term) => {
     try {
