@@ -1,4 +1,6 @@
+import Masonry from "react-masonry-component"
 
+import "../styles/ImageList.css"
 export const ImageList = (props) => {
     const images = props.images.map((image) => {
         return (
@@ -12,7 +14,9 @@ export const ImageList = (props) => {
     })
     return (
         <div>
-            {images}
+            <Masonry className="image-list">
+                {images}
+            </Masonry>
         </div>
     )
 }

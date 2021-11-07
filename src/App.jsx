@@ -2,9 +2,10 @@ import axios from 'axios';
 import { useState } from 'react';
 import { ImageList } from './components/ImageList';
 import { SearchBar } from './components/SearchBar';
+import logo from './logo_square.png';
+
 function App() {
   const [images,setImages] = useState([]);
-   //ERROR ApiKeyを静的に指定すれば動く
   const ApiKey = process.env.REACT_APP_PIXABAY_APIKEY;
   const onSearchSubmit = async (term) => {
     try {
@@ -24,6 +25,7 @@ function App() {
   }
   return (
     <div className="App ui container" style={{ marginTop: "20px" }}>
+      <img src={logo} alt="pixabay-logo" className="pixabay-logo" />
       <SearchBar onSubmit={onSearchSubmit} />
       <ImageList images={images} />
     </div>
